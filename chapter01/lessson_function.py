@@ -162,3 +162,27 @@ menu3('apple', 'banana', 'orange', entree='beef', drink='coffee')
 # def menu3(food, **kwargs, *args):  エラーになる
 
 
+print('############## Docstrings')
+
+
+def example_func(param1, param2):
+    """Example function with types documented in the docstring
+
+    Args:
+        params1 (int): The first parameter.
+        params2 (str): The second parameter.
+
+    Returns:
+        bool: The return value. True for success, False otherwise:
+
+    """
+    print(param1)
+    print(param2)
+    return True
+
+
+print(example_func.__doc__)
+# ドキュメントを表示する
+# example_func.__doc__はHTMLに表示してweb化も出来る
+# help関数でもdocが見える
+help(example_func)
