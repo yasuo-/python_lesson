@@ -186,3 +186,20 @@ print(example_func.__doc__)
 # example_func.__doc__はHTMLに表示してweb化も出来る
 # help関数でもdocが見える
 help(example_func)
+
+
+print('############## 関数内関数')
+
+
+def outer(a, b):
+
+    def plus(c, d):
+        return c + d
+
+    r1 = plus(a, b)
+    r2 = plus(b, a)
+    print(r1)
+    print(r1 + r2)
+
+
+outer(1, 2)
