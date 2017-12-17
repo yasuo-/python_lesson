@@ -56,7 +56,6 @@ menu2()
 menu2('chicken', drink='tomato')  # entreeとdrinkが上書きされる
 
 
-
 print('############## 引数  array')
 
 
@@ -82,3 +81,41 @@ r = test_func2(100)
 print(r)  # [100]
 r = test_func2(100)
 print(r)  # [100]
+
+
+print('############## 位置引数  タプル化')
+
+
+def say_something(word1, word2, word3):
+    print(word1)
+    print(word2)
+    print(word3)
+#  実行できるが面倒
+
+
+say_something('Hello', 'Mike', 'keito')
+
+
+# pythonなら引数の変数前に*を入れることでまとめてくれる
+def say_something2(*args):
+    for arg in args:
+        print(arg)
+
+
+say_something2('Hello', 'Mike', 'keito')
+
+
+# 位置引数と一緒に使える
+def say_something3(w, *args):
+    print(w)
+    for arg in args:
+        print(arg)
+
+
+say_something3('Hello', 'Mike', 'keito')
+# Helloは wに入る
+# 残りは*argに入る
+
+# 下記のような使い方もできる
+t = ('Mike', 'Taro', 'jiro')
+say_something3('Hi', *t)
