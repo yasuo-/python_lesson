@@ -203,3 +203,39 @@ def outer(a, b):
 
 
 outer(1, 2)
+
+
+print('############## クロージャー')
+
+
+def outer2(a, b):
+
+    def inner():
+        return a + b
+
+    return inner  # 実行ではなくinnerの関数をreturnする
+
+
+f = outer2(1, 2)  # ここでは、まだ実行されない
+r = f()  # fを実行する
+print(r)
+# 使うタイミング
+# 呼び出した後すぐに実行したくない時
+
+# ex
+
+
+def circle_area_func(pi):
+
+    def circle_area(radius):
+        return pi * radius * radius
+
+    return circle_area
+
+
+cal1 = circle_area_func(3.14)  # piに3.14が入る circle_areaがreturn
+cal2 = circle_area_func(3.141592)
+
+print(cal1(10))  # circle_area(radius)  radiusに10が入って実行される
+print(cal2(10))
+
