@@ -119,3 +119,46 @@ say_something3('Hello', 'Mike', 'keito')
 # 下記のような使い方もできる
 t = ('Mike', 'Taro', 'jiro')
 say_something3('Hi', *t)
+
+
+print('############## キーワード引数  辞書化')
+
+
+def menu(entree='beef', drink='wine'):
+    print(entree, drink)
+
+
+menu(entree='beef', drink='coffee')
+
+
+# 引数増やしたくなった場合 **をつける
+def menu2(**kwargs):
+    print(kwargs)
+    for k, v in kwargs.items():
+        print(k, v)
+
+
+menu2(entree='beef', drink='coffee')
+#  辞書化する {'entree': 'beef', 'drink': 'coffee'}
+
+d = {
+    'entree': 'beef',
+    'drink': 'coffee',
+    'dessert': 'ice'
+}
+
+menu2(**d)
+
+
+# 位置引数, タプル化, 辞書化全て使える
+def menu3(food, *args, **kwargs):
+    print(food)
+    print(args)
+    print(kwargs)
+
+
+menu3('apple', 'banana', 'orange', entree='beef', drink='coffee')
+# 引数の順番には注意
+# def menu3(food, **kwargs, *args):  エラーになる
+
+
