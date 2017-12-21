@@ -9,7 +9,7 @@ x = "dog"
 def name_space():
     # print(x)  globalのxは呼べない
     x = "cat"
-    print("local:",x)
+    print("local:", x)
     print("locals():", locals())
 
 
