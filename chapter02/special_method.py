@@ -17,11 +17,18 @@ class Word(object):
     def __add__(self, word):
         return self.text.lower() + word.text.lower()
 
-    def __eq__(self, word):
+    def __eq__(self, word):     # イコール
         return self.text.lower() == word.text.lower()
 
 
 w = Word('test')
-w2 = Word('test')
+# __len__
+print(len(w))       # 4
+w2 = Word('#############')
+# __add__
+print(w + w2)       # test#############
+# __eq__
+print(w == w2)      # false 同じなら true
 
-print(w == w2)
+# 他にも特殊文字たくさんある
+# 一番使うのは __str__
